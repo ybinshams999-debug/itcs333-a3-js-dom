@@ -27,10 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function addItem() {
     var text = input.value.trim();
     if (text === '') {
-      errorMsg.style.display = 'block';
-      return;
+      errorMsg.classList.remove('hidden');      return;
     }
-    errorMsg.style.display = 'none';
+    errorMsg.classList.add('hidden');
 
     var li = document.createElement('li');
     var span = document.createElement('span');
@@ -88,6 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
     applyFilter();
   });
 
-  errorMsg.style.display = 'none';
-  updateCounter();
+  errorMsg.classList.add('hidden');
+    updateCounter();
 });
